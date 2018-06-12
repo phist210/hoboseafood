@@ -1,5 +1,5 @@
+<!-- Menu Bar -->
 <div class="menu-bar">
-    <!-- <app-search></app-search> -->
     <div class="menu-links">
         <ul>
             <li>
@@ -21,6 +21,7 @@
     </div>
 </div>
 
+<!-- Header -->
 <div [ngClass]="{'header':true, 'header--big':!isShrunk, 'header--small':isShrunk}">
     <a href="/">
         <img [ngClass]="{'logo':true, 'logo--big':!isShrunk, 'logo--small':isShrunk}" src="https://i.imgur.com/jqplE62.png" height="75" width="200" />
@@ -33,10 +34,15 @@
     </a>
 </div>
 
+<!-- Container -->
 <div class="container">
     <router-outlet></router-outlet>
 </div>
 
+<!-- Footer -->
 <div class="footer">
-    <span>Hobo Seafood © 2018 - Developed by Josh Friese, powered by <a href="https://snipcart.com/">Snipcart</a>, <a href="https://netlify.com">Netlify </a> and <a href="https://www.sanity.io/">Sanity.io</a>.</span>
+    <span>Hobo Seafood © 2018 - Developed by Josh Friese, powered by
+        <a href="https://snipcart.com/">Snipcart</a>,
+        <a href="https://netlify.com">Netlify </a> and
+        <a href="https://www.sanity.io/">Sanity.io</a>.</span>
 </div>
