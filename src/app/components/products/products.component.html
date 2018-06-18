@@ -1,6 +1,5 @@
-<div class="content-container">
-    <div class="products-container">
-        <!--
+<div class="products-container">
+    <!--
         <div class="products row" *ngFor="let product of products; let i = index">
             <div class="clearfix" *ngIf="i % 3 == 0"></div>
             <div class="col-md-12" class="product">
@@ -15,24 +14,24 @@
                 </button>
             </div>
         </div> -->
-        <ul class='products'>
+    <ul class='products'>
+        <li>
+            <h2 class='title'>SHOP</h2>
+        </li>
+        <li class="products" *ngFor="let product of products; let i = index">
+            <img src="{{ product.imageUrl }}" height="100" />
 
-            <li class="products" *ngFor="let product of products; let i = index">
-                <img src="{{ product.imageUrl }}" height="100" />
+            <!-- <a class="product" routerLink="/product/{{ product._id }}"> -->
+            <h6 class="product-name">{{ product.name }}</h6>
+            <!-- </a> -->
+            <p>${{ product.price }}</p>
+            <p>{{ product.description }}</p>
 
-                <!-- <a class="product" routerLink="/product/{{ product._id }}"> -->
-                <span class="product-name">{{ product.name }}</span>
-                <!-- </a> -->
-                <p>${{ product.price }}</p>
-                <p>{{ product.description }}</p>
-
-                <button class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
-                    data-item-url='https://wt-4b2a879e3bb5c630d65bc12c99321764-0.run.webtask.io/sanity-parser'>
+            <button class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
+                data-item-url='https://wt-4b2a879e3bb5c630d65bc12c99321764-0.run.webtask.io/sanity-parser'>
                     Add to cart
                 </button>
-            </li>
-        </ul>
-
-    </div>
+        </li>
+    </ul>
 
 </div>

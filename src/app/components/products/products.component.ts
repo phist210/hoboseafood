@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Query } from '@angular/core/src/metadata/di';
 
 @Component({
+  selector: 'app-products-component',
   templateUrl: './products.component.html',
   styleUrls: ['../../app.component.css']
 })

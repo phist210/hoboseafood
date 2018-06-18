@@ -1,48 +1,50 @@
-<!-- Menu Bar -->
-<div class="menu-bar">
-    <div class="menu-links">
-        <ul>
-            <li>
-                <a target="_blank" href="https://hoboseafood.sanity.studio/desk">
+<div class='main'>
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+        <div class="menu-links">
+            <ul>
+                <li>
+                    <a target="_blank" href="https://hoboseafood.sanity.studio/desk">
                     Admin Portal
                 </a>
-            </li>
-            <li>
-                <a routerLink="/shop">
+                </li>
+                <li>
+                    <a routerLink="/shop">
                     Shop
                 </a>
-            </li>
-            <li>
-                <a href="#content">
+                </li>
+                <li>
+                    <a href="#content">
                     Contact
                 </a>
-            </li>
-        </ul>
-    </div>
-</div>
-
-<!-- Header -->
-<div [ngClass]="{'header':true, 'header--big':!isShrunk, 'header--small':isShrunk}">
-    <a href="/">
-        <img [ngClass]="{'logo':true, 'logo--big':!isShrunk, 'logo--small':isShrunk}" src="https://i.imgur.com/jqplE62.png" height="75" width="200" />
-    </a>
-    <a href="#" class="snipcart-checkout checkout">
-        <div class="snipcart-summary">
-            <h2>
-                <i class="fa fa-shopping-cart"></i> (<span class="snipcart-total-price">0</span>)</h2>
+                </li>
+            </ul>
         </div>
-    </a>
-</div>
+    </div>
 
-<!-- Container -->
-<div class="container">
-    <router-outlet></router-outlet>
-</div>
+    <!-- Header -->
+    <div [ngClass]="{'header':true, 'header--big':!isShrunk, 'header--small':isShrunk}">
+        <a href="/">
+            <h1>HOBO ⚓ SEAFOOD</h1>
+        </a>
+        <a href="#" class="snipcart-checkout checkout">
+            <div class="snipcart-summary">
+                <h2>
+                    <i class="fa fa-shopping-cart"></i> (<span class="snipcart-total-price">0</span>)</h2>
+            </div>
+        </a>
+    </div>
 
-<!-- Footer -->
-<div class="footer">
-    <span>Hobo Seafood © 2018 - Developed by Josh Friese, powered by
+    <!-- Container -->
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <span>Hobo Seafood © 2018 - Developed by Josh Friese, powered by
         <a href="https://snipcart.com/">Snipcart</a>,
         <a href="https://netlify.com">Netlify </a> and
         <a href="https://www.sanity.io/">Sanity.io</a>.</span>
+    </div>
 </div>

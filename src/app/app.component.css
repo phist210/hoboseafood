@@ -1,3 +1,19 @@
+@font-face {
+    font-family: "haymakerregular";
+    src: url("../assets/fonts/haymaker-webfont.eot");
+    src: url("../assets/fonts/haymaker-webfont.eot?#iefix") format("embedded-opentype"), url("../assets/fonts/haymaker-webfont.woff") format("woff"), url("../assets/fonts/haymaker-webfont.ttf") format("truetype"), url("../assets/fonts/haymaker-webfont.svg#haymakerregular") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'blanchcaps_inline';
+    src: url("../assets/fonts/blanch_caps_inline-webfont.eot");
+    src: url("../assets/fonts/blanch_caps_inline-webfont.eot?#iefix") format('embedded-opentype'), url("../assets/fonts/blanch_caps_inline-webfont.woff") format('woff'), url("../assets/fonts/blanch_caps_inline-webfont.ttf") format('truetype'), url("../assets/fonts/blanch_caps_inline-webfont.svg#blanchcaps_inline") format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 a,
 a:visited {
     text-decoration: none;
@@ -16,6 +32,24 @@ ul {
 
 body {
     font-family: 'Slabo 27px', serif;
+}
+
+h1 {
+    font-family: 'blanchcaps_inline', sans-serif;
+    text-align: center;
+    font-weight: normal;
+    margin: 0;
+    font-size: 4em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: .9;
+    font-weight: normal;
+    font-family: 'haymakerregular', sans-serif;
 }
 
 
@@ -97,7 +131,7 @@ body {
 }
 
 .header--big {
-    height: 15%;
+    height: 10%;
     margin-top: 1.5em;
     -webkit-box-shadow: 0.5px 0.9px 5px rgba(0, 0, 0, 0.1);
     box-shadow: 0.5px 0.9px 5px rgba(0, 0, 0, 0.1);
@@ -106,14 +140,15 @@ body {
 }
 
 .header--small {
-    height: 10%;
+    height: 5%;
     font-size: .5em;
     position: fixed;
     margin-top: 0em;
     background: white;
 }
 
-.logo {}
+
+/* .logo {}
 
 .logo--big {
     height: 5em;
@@ -122,10 +157,15 @@ body {
 .logo--small {
     height: 5.5em;
     width: 10em;
-}
+} */
 
 
 /* LANDING */
+
+.shop-link {
+    position: fixed;
+    z-index: 1;
+}
 
 .landing {
     width: 100%;
@@ -149,19 +189,69 @@ body {
     text-transform: uppercase;
 }
 
-.shop-link {
-    position: fixed;
-    z-index: 1;
+.about {
+    padding: 1em;
+    position: relative;
+    width: 50%;
+    margin-top: 3em;
 }
 
+.info {
+    border: .4em black solid;
+    margin: 1em;
+    padding: 1em;
+    text-align: center;
+}
 
-/* CONTENT CONTAINER */
+.info h2,
+h4 {
+    line-height: .3;
+}
+
+.contact {
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 50%;
+    border-left: .1em solid black;
+}
+
+.contact-links {
+    width: 70%;
+    margin: 0 auto;
+    display: inline-block;
+    line-height: 1.5;
+}
+
+.hours {
+    text-align: center;
+}
+
+.day {
+    float: left;
+    font-weight: 900;
+}
+
+.times {
+    float: right;
+}
+
+.hours:after {
+    content: '';
+    width: 100%;
+}
+
+.title {
+    font-size: 3em;
+}
 
 .content-container {
     height: 90%;
     top: 100%;
     margin-top: 0em;
-    background-color: rgba(18, 89, 203, 0.8);
+    background-color: rgba(18, 89, 203, 0.031);
     background: linear-gradient(rgba(18, 89, 203, 0.8), rgba(60, 92, 92, 1));
     display: flex;
     flex-flow: row;
@@ -169,58 +259,42 @@ body {
     padding: 3em 0em 3em 3em;
 }
 
-.about {
-    padding: 1em;
-    position: relative;
-    width: 50%;
-    margin-top: 3em;
-    color: white;
-}
-
-.contact {
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    position: relative;
-    width: 50%;
-    border-left: .1em solid white;
-}
-
-.contact-links {
-    width: 50%;
-    margin: 0 auto;
-    display: inline-block;
-}
-
-.title {}
-
-
-/* FOOTER */
-
-.footer {
-    background-color: grey;
-    padding-top: .5em;
-    padding-bottom: .5em;
-    color: white;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.footer a {
-    color: #CFD8DC !important;
-    text-decoration: none;
-}
-
 
 /* PRODUCTS */
 
+.products-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    background-image: url("https://hdwallsource.com/img/2014/8/fishing-boat-wallpaper-41865-42851-hd-wallpapers.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.products-container {
+    height: 90%;
+    top: 100;
+    width: 40%;
+    margin-top: 0em;
+    z-index: 9999;
+    padding: 3em 0em 3em 3em;
+    display: flex;
+    justify-content: space-around;
+    align-items: left;
+    overflow: auto;
+}
+
+div.products {
+    width: 30%;
+    height: auto;
+    margin: 0 auto;
+}
+
 ul.products {
     width: 80%;
+    margin-top: 6em;
     background-color: white;
-    padding: 1em;
+    padding: 1em 4em 2em 2em;
     border: .5em black solid;
     overflow: auto;
 }
@@ -261,32 +335,6 @@ li.products {
 
 /* PRODUCT */
 
-.products-wrapper {
-    width: 100%;
-    margin: 0 auto;
-    background-image: url("https://hdwallsource.com/img/2014/8/fishing-boat-wallpaper-41865-42851-hd-wallpapers.jpg");
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-}
-
-.products-container {
-    width: 70%;
-    height: auto;
-    padding-top: 8em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: left;
-    overflow: auto;
-}
-
-div.products {
-    width: 30%;
-    height: auto;
-    margin: 0 auto;
-}
-
 .product:hover {
     background-color: #CFD8DC;
 }
@@ -304,6 +352,27 @@ div.products {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background-color: white;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    color: black;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: .8em;
+}
+
+.footer a {
+    color: rgb(130, 130, 130) !important;
+    text-decoration: none;
 }
 
 button,
@@ -372,6 +441,12 @@ input[type=submit]:focus:after {
 
 
 /* SNIPCART */
+
+.snipcart-overwrite #snipcart-header #snipcart-title {
+    color: #50bcd0;
+    background: url('../../favicon.ico') no-repeat 0 center;
+    padding-left: 60px;
+}
 
 .snipcart-summary {
     margin-left: 200px;
