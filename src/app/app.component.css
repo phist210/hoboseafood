@@ -32,12 +32,13 @@ ul {
 }
 
 body {
-    font-family: sans-serif;
-}
-
-body {
     margin: 0;
     padding: 0;
+    -webkit-transform: translate3d(0px, 0px, 0px);
+    -webkit-font-smoothing: antialiased;
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+    font-family: sans-serif;
 }
 
 header,
@@ -140,7 +141,6 @@ h6 {
 
 .header a {
     text-decoration: none;
-    padding: .5em;
 }
 
 .header--big {
@@ -159,18 +159,6 @@ h6 {
     margin-top: 0em;
     background: white;
 }
-
-
-/* .logo {}
-
-.logo--big {
-    height: 5em;
-}
-
-.logo--small {
-    height: 5.5em;
-    width: 10em;
-} */
 
 
 /* LANDING */
@@ -223,7 +211,6 @@ h4 {
 
 .contact {
     text-align: center;
-    padding: 1em;
     display: flex;
     align-items: center;
     position: relative;
@@ -285,16 +272,16 @@ h4 {
 }
 
 .products-container {
-    height: 90%;
-    top: 100;
-    width: 40%;
+    margin: 0 auto;
+    height: 90vh;
+    width: 50%;
     margin-top: 0em;
     z-index: 9999;
-    padding: 3em 0em 3em 3em;
+    padding: 3em 0em 3em 0em;
     display: flex;
     justify-content: space-around;
     align-items: left;
-    overflow: auto;
+    overflow: scroll;
 }
 
 div.products {
@@ -309,7 +296,7 @@ ul.products {
     background-color: white;
     padding: 1em 4em 2em 2em;
     border: .5em black solid;
-    overflow: auto;
+    overflow: scroll;
 }
 
 li.products {
@@ -499,32 +486,116 @@ input[type=submit]:focus:after {
 /* MEDIA QUERIES */
 
 
-/* .container {
-    margin-right: auto;
-    margin-left: auto;
-}
-.container:before,
-.container:after {
-    content: " ";
-    display: table;
-}
-.container:after {
-    clear: both;
-} */
+/*
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {}
 
 
-/* @media (min-width: 768px) {
-    .container {
-        width: 750px;
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .products-container {
+        width: auto;
     }
 }
-@media (min-width: 992px) {
-    .container {
-        width: 970px;
+
+
+/*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .products-container {
+        width: auto;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    /* .header {
+        font-size: .9em;
+    }
+    .header--big {
+        height: 10%;
+        margin-top: 1.5em;
+    }
+    .header--small {
+        height: 5%;
+        font-size: .3em;
+    } */
+}
+
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .products-container {
+        width: auto;
+    }
+    .content-container {
+        padding: 0em 0em 2em 2em;
+        font-size: .8em;
+    }
+    h1 {
+        font-size: 3em;
     }
 }
-@media (min-width: 1200px) {
-    .container {
-        width: 1170px;
+
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .products-container {
+        width: auto;
+        font-size: .8em;
     }
-} */
+    .content-container {
+        padding: 5em 1em 4em 2em;
+        flex-direction: column;
+        font-size: .7em;
+    }
+    h1 {
+        font-size: 3em;
+    }
+    .header {
+        font-size: .5em;
+        padding-left: .2em;
+    }
+    .header--big {
+        height: 5%;
+        margin-top: 3em;
+    }
+    .header--small {
+        height: 2.5%;
+        font-size: .3em;
+    }
+    .about {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .info {
+        font-size: .7em;
+        border: 0;
+    }
+    .contact {
+        width: 100%;
+        margin: 0 auto;
+        border: 0;
+    }
+    .footer {
+        font-size: .5em;
+    }
+    /* split about and contact */
+}
