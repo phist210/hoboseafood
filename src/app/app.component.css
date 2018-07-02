@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
 @font-face {
     font-family: "haymakerregular";
     src: url("../assets/fonts/haymaker-webfont.eot");
@@ -31,7 +32,19 @@ ul {
 }
 
 body {
-    font-family: 'Slabo 27px', serif;
+    font-family: sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+section,
+footer {
+    margin: 0;
+    padding: 1px;
 }
 
 h1 {
