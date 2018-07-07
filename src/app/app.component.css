@@ -577,7 +577,6 @@ input[type=submit]:focus:after {
     .header--big {
         height: 5%;
         font-size: .3em;
-        margin-top: 2.8em;
     }
     .header--small {
         height: 4%;
