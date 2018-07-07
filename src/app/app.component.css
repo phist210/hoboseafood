@@ -53,7 +53,7 @@ h1 {
     text-align: center;
     font-weight: normal;
     margin: 0;
-    font-size: 4em;
+    font-size: 3em;
 }
 
 h2,
@@ -127,7 +127,7 @@ h6 {
     position: absolute;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     color: #000 !important;
     background-color: rgba(255, 255, 255, 0.8);
     right: 0;
@@ -504,6 +504,9 @@ input[type=submit]:focus:after {
     .products-container {
         width: auto;
     }
+    h1 {
+        font-size: 2em;
+    }
 }
 
 
@@ -547,7 +550,7 @@ input[type=submit]:focus:after {
         font-size: .8em;
     }
     h1 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 }
 
@@ -558,9 +561,16 @@ input[type=submit]:focus:after {
 */
 
 @media (min-width: 320px) and (max-width: 519px) {
+    .landing {
+        background-image: none;
+    }
+    ul.products {
+        border: 0px;
+    }
     .products-container {
         width: auto;
         font-size: .8em;
+        height: 100%;
     }
     .content-container {
         padding: 5em 1em 4em 2em;
@@ -568,15 +578,16 @@ input[type=submit]:focus:after {
         font-size: .7em;
     }
     h1 {
-        font-size: 3em;
+        font-size: 2em;
+        padding: .5em;
+    }
+    .title {
+        font-size: 2em;
     }
     .header {
+        justify-content: center;
         font-size: .5em;
-        padding-left: .3em;
-    }
-    .header--big {
-        height: 5%;
-        font-size: .3em;
+        padding-top: 2em;
     }
     .header--small {
         height: 4%;
@@ -598,5 +609,7 @@ input[type=submit]:focus:after {
     .footer {
         font-size: .3em;
     }
-    /* split about and contact */
+    .contact-links {
+        line-height: 1;
+    }
 }
