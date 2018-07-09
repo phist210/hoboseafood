@@ -13,7 +13,7 @@
             <p>{{ product.description }}</p>
 
             <button class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
-                data-item-url='https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_id==$id]&$id="{{product._id}}"'>
+                attr.data-item-url='https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_id==$id]&$id={{product._id}}'>
                     Add to cart
                 </button>
         </li>
