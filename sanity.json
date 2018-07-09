@@ -8,6 +8,7 @@
         "dataset": "products"
     },
     "plugins": [
+        "@sanity/core",
         "@sanity/base",
         "@sanity/components",
         "@sanity/default-layout",
