@@ -2,6 +2,7 @@ export default {
     title: 'Product',
     name: 'product',
     type: 'document',
+    id: '_id',
     fields: [
         {
             title: 'Name',
