@@ -15,7 +15,7 @@ export class ProductsComponent implements OnInit {
   products: object[];
 
   ngOnInit(): void {
-    const query = '*[_type == "product"]{ name, _id, description, price, "imageUrl": image.asset->url }';
+    const query = '*[_type == "product"]{ name, _id, id, description, price, "imageUrl": image.asset->url }';
 
     this.http
       .get(

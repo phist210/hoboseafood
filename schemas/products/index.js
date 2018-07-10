@@ -5,6 +5,11 @@ export default {
     id: '_id',
     fields: [
         {
+            title: 'id',
+            name: 'id',
+            type: 'number'
+        },
+        {
             title: 'Name',
             name: 'name',
             type: 'string'
