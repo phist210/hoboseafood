@@ -5,7 +5,8 @@
     },
     "api": {
         "projectId": "ez95hkal",
-        "dataset": "products"
+        "dataset": "products",
+        "useCdn": true
     },
     "plugins": [
         "@sanity/core",

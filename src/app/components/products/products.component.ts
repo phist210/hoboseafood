@@ -13,6 +13,7 @@ export class ProductsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   products: object[];
+  jsonOutput: object[];
 
   ngOnInit(): void {
     const query = '*[_type == "product"]{ name, _id, id, description, price, "imageUrl": image.asset->url }';
@@ -24,6 +25,7 @@ export class ProductsComponent implements OnInit {
       .subscribe(data => {
         this.products = data['result'];
       });
+
   }
 
 }
