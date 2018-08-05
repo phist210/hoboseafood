@@ -12,10 +12,11 @@
             <p>${{ product.price }}</p>
             <p>{{ product.description }}</p>
 
-            <button class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
-                attr.data-item-url='https://ez95hkal.api.sanity.io/v1/data/query/products?query=*[_id=="{{product._id}}"]'>
+            <button (click)="handleClick()" class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
+                attr.data-item-url='/' data-item-url='/' >
                     Add to cart
                 </button>
+
         </li>
     </ul>
 

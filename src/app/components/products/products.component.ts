@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Query } from '@angular/core/src/metadata/di';
+import { parse } from 'url';
 
 @Component({
   selector: 'app-products-component',
@@ -13,7 +14,33 @@ export class ProductsComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   products: object[];
-  jsonOutput: object[];
+
+  handleClick(): void {
+    this.http
+      .get(
+        `https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_type=="product"]`
+      )
+      .subscribe(data => {
+        this.parseAndSave(data);
+      });
+  }
+
+  parseAndSave(data) {
+    const products = data['result'];
+    let parsedId;
+    const parsedProducts = [];
+    products.forEach(product => {
+      parsedId = product['_id'];
+      product['id'] = parsedId;
+      product['url'] = `/`;
+      parsedProducts.push(product);
+    });
+    console.log(parsedProducts);
+    const textArea = document.getElementById('output');
+    const textNode = document.createTextNode(JSON.stringify(parsedProducts));
+    textArea.appendChild(textNode);
+    // Snipcart needs to find parsedProducts.
+  }
 
   ngOnInit(): void {
     const query = '*[_type == "product"]{ name, _id, id, description, price, "imageUrl": image.asset->url }';

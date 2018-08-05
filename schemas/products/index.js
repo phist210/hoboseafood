@@ -3,9 +3,10 @@ export default {
     name: 'product',
     type: 'document',
     id: '_id',
+    url: `https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_type=="product"]`,
     fields: [
         {
-            title: 'id',
+            title: 'ID',
             name: 'id',
             type: 'number'
         },

@@ -332,6 +332,10 @@ li.products {
     margin-right: 1rem;
 }
 
+#hidden {
+    display: none;
+}
+
 
 /* PRODUCT */
 
