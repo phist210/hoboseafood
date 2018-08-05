@@ -32,7 +32,7 @@ export class ProductsComponent implements OnInit {
     products.forEach(product => {
       parsedId = product['_id'];
       product['id'] = parsedId;
-      product['url'] = `/`;
+      product['url'] = `/v1/data/query/products?query=*[_type == "product"]`;
       parsedProducts.push(product);
     });
     console.log(parsedProducts);

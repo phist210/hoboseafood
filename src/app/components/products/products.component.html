@@ -13,7 +13,7 @@
             <p>{{ product.description }}</p>
 
             <button (click)="handleClick()" class="snipcart-add-item" attr.data-item-name="{{ product.name }}" attr.data-item-id="{{ product._id }}" attr.data-item-image="{{ product.imageUrl }}" attr.data-item-price="{{ product.price }}" attr.data-item-description="{{ product.description }}"
-                attr.data-item-url='/' data-item-url='/' >
+                attr.data-item-url='/v1/data/query/products?query=*[_type == "product"]' data-item-url='/v1/data/query/products?query=*[_type == "product"]' >
                     Add to cart
                 </button>
 
