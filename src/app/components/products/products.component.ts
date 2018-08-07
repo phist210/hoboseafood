@@ -36,9 +36,7 @@ export class ProductsComponent implements OnInit {
       parsedProducts.push(product);
     });
     console.log(parsedProducts);
-    const textArea = document.getElementById('output');
-    const textNode = document.createTextNode(JSON.stringify(parsedProducts));
-    textArea.appendChild(textNode);
+    this.http.post(`https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput`, parsedProducts);
     // Snipcart needs to find parsedProducts.
   }
 
