@@ -36,7 +36,8 @@ export class ProductsComponent implements OnInit {
       parsedProducts.push(product);
     });
     console.log(parsedProducts);
-    this.http.post(`https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput`, parsedProducts);
+    this.http.post(`https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput`, parsedProducts)
+    .subscribe(res => { console.log(res); });
     // Snipcart needs to find parsedProducts.
   }
 
