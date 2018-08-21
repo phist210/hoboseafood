@@ -10,45 +10,37 @@ import { parse } from 'url';
 })
 export class ProductsComponent implements OnInit {
   constructor(private http: HttpClient) {}
-  private _options = {
-    headers: new HttpHeaders({
-      "Content-Type": "application/json",
-      "Access-Control-Allow-Origin": "*"
-    })
-  };
 
   products: object[];
 
-  handleClick(): void {
+  handleClick(id) {
+    console.log(id)
+    const url = `https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_id=="` + id + `" ]`
     this.http
       .get(
-        `https://ez95hkal.apicdn.sanity.io/v1/data/query/products?query=*[_type=="product"]`
+        url
       )
       .subscribe(data => {
-        this.parseAndSave(data);
+        this.parseAndSave(data, url);
       });
   }
 
-  parseAndSave(data) {
-    const products = data["result"];
+  parseAndSave(data, url) {
+    const product = data["result"][0];
     let parsedId;
-    const parsedProducts = [];
-    products.forEach(product => {
-      parsedId = product["_id"];
-      product["id"] = parsedId;
-      product["url"] = `/v1/data/query/products?query=*[_type == "product"]`;
-      parsedProducts.push(product);
-    });
-    console.log(parsedProducts);
-    this.http
-      .post(
-        `https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput`,
-        parsedProducts,
-        this._options
-      )
-      .subscribe(res => {
-        console.log(res);
-      });
+    parsedId = product["_id"];
+    product["id"] = parsedId;
+    product["url"] = url;
+    console.log(product);
+    // this.http
+    //   .post(
+    //     `https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput`,
+    //     parsedProducts,
+    //     this._options
+    //   )
+    //   .subscribe(res => {
+    //     console.log(res);
+    //   });
     // Snipcart needs to find parsedProducts.
   }
 
