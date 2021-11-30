@@ -31,17 +31,17 @@ export class ProductsComponent implements OnInit {
     parsedId = product["_id"];
     product["id"] = parsedId;
     product["url"] = url;
-    console.log(product);
-    this.http
-      .post(
-        `https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput?id=` + parsedId + `` ,
-        product,
-        this._options
-      )
-      .subscribe(res => {
-        console.log(res);
-      });
-    // Snipcart needs to find parsedProducts.
+//     console.log(product);
+//     this.http
+//       .post(
+//         `https://hoboseafood.netlify.com/.netlify/functions/postJsonOutput?id=` + parsedId + `` ,
+//         product,
+//         this._options
+//       )
+//       .subscribe(res => {
+//         console.log(res);
+//       });
+//     // Snipcart needs to find parsedProducts.
   }
 
   ngOnInit(): void {
